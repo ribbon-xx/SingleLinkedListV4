@@ -25,10 +25,10 @@ public class SingleLinkedListTest extends TestCase {
 			node.setPrevNodeIndex(prevIndex);
 			strArray.add(node);
 		}
-
+		nodeAnchor = new Node();
 		nodeAnchor.setNode("String 2");
-		nodeAnchor.setNextNodeIndex(2);
-		nodeAnchor.setPrevNodeIndex(0);
+		nodeAnchor.setNextNodeIndex(3);
+		nodeAnchor.setPrevNodeIndex(1);
 
 		newStr = "New Strings With Random Position Per Test";
 	}
@@ -51,12 +51,13 @@ public class SingleLinkedListTest extends TestCase {
 		assertEquals(strArray.size(), list.size());
 	}
 
-	//Step 4
+	// Step 4
 	public void testInsertAfterIndexN() {
 		SingleLinkedList list = new SingleLinkedList(strArray);
-		Node nodeInsert = new Node();
-		nodeInsert.setNode(newStr);
 
-		list.insertAfter(nodeAnchor, nodeInsert);
+		list.insertAfter(nodeAnchor, newStr);
+
+		assertEquals(strArray.size() + 1, list.size());
+		assertEquals(newStr, list.get(3).getNode());
 	}
 }
