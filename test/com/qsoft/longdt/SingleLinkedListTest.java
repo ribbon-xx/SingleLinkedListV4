@@ -34,4 +34,10 @@ public class SingleLinkedListTest extends TestCase {
 		SingleLinkedList list = new SingleLinkedList(strArray);
 		assertEquals(strArray, list.getList());
 	}
+
+	// Step 3
+	public void testGetSizeOfLinkList() {
+		SingleLinkedList list = new SingleLinkedList(strArray);
+		assertEquals(strArray.size(), list.size());
+	}
 }
