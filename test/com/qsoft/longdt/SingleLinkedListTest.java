@@ -8,6 +8,10 @@ public class SingleLinkedListTest extends TestCase {
 
 	private ArrayList<Node> strArray;
 
+	private String newStr;
+
+	private Node nodeAnchor;
+
 	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
@@ -21,6 +25,12 @@ public class SingleLinkedListTest extends TestCase {
 			node.setPrevNodeIndex(prevIndex);
 			strArray.add(node);
 		}
+
+		nodeAnchor.setNode("String 2");
+		nodeAnchor.setNextNodeIndex(2);
+		nodeAnchor.setPrevNodeIndex(0);
+
+		newStr = "New Strings With Random Position Per Test";
 	}
 
 	// Step 1
@@ -39,5 +49,14 @@ public class SingleLinkedListTest extends TestCase {
 	public void testGetSizeOfLinkList() {
 		SingleLinkedList list = new SingleLinkedList(strArray);
 		assertEquals(strArray.size(), list.size());
+	}
+
+	//Step 4
+	public void testInsertAfterIndexN() {
+		SingleLinkedList list = new SingleLinkedList(strArray);
+		Node nodeInsert = new Node();
+		nodeInsert.setNode(newStr);
+
+		list.insertAfter(nodeAnchor, nodeInsert);
 	}
 }

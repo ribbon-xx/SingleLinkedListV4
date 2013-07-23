@@ -23,4 +23,8 @@ public class SingleLinkedList {
 		return listObject;
 	}
 
+	public void insertAfter(Node nodeAnchor, Object nodeInsert) {
+
+	}
+
 }
