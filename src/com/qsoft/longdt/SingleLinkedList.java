@@ -20,7 +20,7 @@ public class SingleLinkedList {
 	}
 
 	public Object getList() {
-		return null;
+		return listObject;
 	}
 
 }
