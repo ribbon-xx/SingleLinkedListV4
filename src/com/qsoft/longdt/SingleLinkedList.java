@@ -1,10 +1,17 @@
 package com.qsoft.longdt;
 
+import java.util.ArrayList;
+
 public class SingleLinkedList {
 
-	public Object size() {
-		// TODO Auto-generated method stub
-		return null;
+	private ArrayList<Object> listObject;
+
+	public SingleLinkedList() {
+		listObject = new ArrayList<Object>();
+	}
+
+	public int size() {
+		return listObject.size();
 	}
 
 }
