@@ -16,6 +16,8 @@ public class SingleLinkedListTest extends TestCase {
 
 	private Node nodeFirst;
 
+	private Node nodeLast;
+
 	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
@@ -43,6 +45,11 @@ public class SingleLinkedListTest extends TestCase {
 		nodeFirst.setNode("String 0");
 		nodeFirst.setNextNodeIndex(1);
 		nodeFirst.setPrevNodeIndex(-1);
+
+		nodeLast = new Node();
+		nodeLast.setNode("String 4");
+		nodeLast.setNextNodeIndex(-1);
+		nodeLast.setPrevNodeIndex(3);
 
 		newStr = "New Strings With Random Position Per Test";
 	}
@@ -92,5 +99,16 @@ public class SingleLinkedListTest extends TestCase {
 		assertEquals(nodeFirst.getNextNodeIndex(), firstNode.getNextNodeIndex());
 		assertEquals(nodeFirst.getNode(), firstNode.getNode());
 		assertEquals(nodeFirst.getPrevNodeIndex(), firstNode.getPrevNodeIndex());
+	}
+
+	// Step 7
+	public void testGetTheLastNode() {
+		SingleLinkedList list = new SingleLinkedList(strArray);
+
+		Node lastNode = list.last();
+
+		assertEquals(nodeLast.getNextNodeIndex(), lastNode.getNextNodeIndex());
+		assertEquals(nodeLast.getNode(), lastNode.getNode());
+		assertEquals(nodeLast.getPrevNodeIndex(), lastNode.getPrevNodeIndex());
 	}
 }

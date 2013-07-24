@@ -74,4 +74,9 @@ public class SingleLinkedList {
 		return listObject.get(0);
 	}
 
+	public Node last() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
