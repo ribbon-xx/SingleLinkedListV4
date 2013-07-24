@@ -58,6 +58,16 @@ public class SingleLinkedList {
 	}
 
 	public void delete(Node nodeToDelete) {
+		for (Node node : listObject) {
+			if (node.getNode().equals(nodeToDelete.getNode())
+					&& node.getNextNodeIndex() == nodeToDelete
+							.getNextNodeIndex()
+					&& node.getPrevNodeIndex() == nodeToDelete
+							.getPrevNodeIndex()) {
+				listObject.remove(node);
+				break;
+			}
+		}
 	}
 
 }
