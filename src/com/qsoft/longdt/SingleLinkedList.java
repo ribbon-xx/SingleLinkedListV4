@@ -75,8 +75,7 @@ public class SingleLinkedList {
 	}
 
 	public Node last() {
-		// TODO Auto-generated method stub
-		return null;
+		return listObject.get(listObject.size() - 1);
 	}
 
 }
