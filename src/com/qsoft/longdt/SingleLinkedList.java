@@ -70,4 +70,9 @@ public class SingleLinkedList {
 		}
 	}
 
+	public Node first() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
