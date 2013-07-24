@@ -57,4 +57,7 @@ public class SingleLinkedList {
 		return listObject.get(i);
 	}
 
+	public void delete(Node nodeToDelete) {
+	}
+
 }

@@ -12,6 +12,8 @@ public class SingleLinkedListTest extends TestCase {
 
 	private Node nodeAnchor;
 
+	private Node nodeToDelete;
+
 	@Override
 	protected void setUp() throws Exception {
 		super.setUp();
@@ -29,6 +31,11 @@ public class SingleLinkedListTest extends TestCase {
 		nodeAnchor.setNode("String 2");
 		nodeAnchor.setNextNodeIndex(3);
 		nodeAnchor.setPrevNodeIndex(1);
+
+		nodeToDelete = new Node();
+		nodeToDelete.setNode("String 3");
+		nodeToDelete.setNextNodeIndex(4);
+		nodeToDelete.setPrevNodeIndex(2);
 
 		newStr = "New Strings With Random Position Per Test";
 	}
@@ -59,5 +66,13 @@ public class SingleLinkedListTest extends TestCase {
 
 		assertEquals(strArray.size() + 1, list.size());
 		assertEquals(newStr, list.get(3).getNode());
+	}
+
+	// Step 5
+	public void testDeleteANode() {
+		SingleLinkedList list = new SingleLinkedList(strArray);
+		list.delete(nodeToDelete);
+
+		assertEquals(strArray.size() - 1, list.size());
 	}
 }
